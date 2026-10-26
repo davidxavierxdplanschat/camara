@@ -1,0 +1,121 @@
+@import "tailwindcss";
+
+:root {
+  --ink: #132a2f;
+  --muted: #52676c;
+  --paper: #f5f7f2;
+  --surface: #ffffff;
+  --brand: #006b62;
+  --brand-dark: #064e49;
+  --accent: #e5a11a;
+  --line: #dbe3df;
+  --focus: #8b3dff;
+}
+
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.5;
+}
+a {
+  color: inherit;
+}
+button,
+input,
+select {
+  font: inherit;
+}
+:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+}
+.skip-link {
+  position: fixed;
+  left: 1rem;
+  top: -5rem;
+  z-index: 100;
+  border-radius: 0.5rem;
+  background: var(--ink);
+  color: white;
+  padding: 0.75rem 1rem;
+}
+.skip-link:focus {
+  top: 1rem;
+}
+.container-app {
+  width: min(1180px, calc(100% - 2rem));
+  margin-inline: auto;
+}
+.card {
+  min-width: 0;
+  border: 1px solid var(--line);
+  border-radius: 1rem;
+  background: var(--surface);
+  box-shadow: 0 8px 28px rgba(19, 42, 47, 0.055);
+}
+.eyebrow {
+  color: var(--brand);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+.button-primary {
+  min-height: 44px;
+  border-radius: 0.65rem;
+  background: var(--brand);
+  color: white;
+  padding: 0.7rem 1rem;
+  font-weight: 700;
+}
+.button-primary:hover {
+  background: var(--brand-dark);
+}
+.button-secondary {
+  min-height: 44px;
+  border: 1px solid var(--line);
+  border-radius: 0.65rem;
+  background: white;
+  padding: 0.7rem 1rem;
+  font-weight: 700;
+}
+.field {
+  min-height: 46px;
+  width: 100%;
+  border: 1px solid #b8c6c2;
+  border-radius: 0.65rem;
+  background: white;
+  padding: 0.65rem 0.75rem;
+  color: var(--ink);
+}
+.skeleton {
+  border-radius: 0.6rem;
+  background: linear-gradient(90deg, #e5eae7 25%, #f7f9f7 50%, #e5eae7 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+@keyframes shimmer {
+  to {
+    background-position: -200% 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
